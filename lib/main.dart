@@ -6,6 +6,19 @@ void main() => runApp(XylophoneApp());
 class XylophoneApp extends StatelessWidget {
   void playSound(int id) => (AudioCache().play('note$id.wav'));
 
+  Expanded buildKey(Color color, int id) => Expanded(
+        child: ElevatedButton(
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all<Color>(color),
+          ),
+          child: Text(
+            "Click Me",
+            style: TextStyle(color: Colors.white),
+          ),
+          onPressed: () => playSound(id),
+        ),
+      );
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,95 +28,13 @@ class XylophoneApp extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Expanded(
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.blue),
-                  ),
-                  child: Text(
-                    "Click Me",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onPressed: () => playSound(1),
-                ),
-              ),
-              Expanded(
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.orange),
-                  ),
-                  child: Text(
-                    "Click Me",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onPressed: () => playSound(2),
-                ),
-              ),
-              Expanded(
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.yellow),
-                  ),
-                  child: Text(
-                    "Click Me",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onPressed: () => playSound(3),
-                ),
-              ),
-              Expanded(
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.green),
-                  ),
-                  child: Text(
-                    "Click Me",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onPressed: () => playSound(4),
-                ),
-              ),
-              Expanded(
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.teal),
-                  ),
-                  child: Text(
-                    "Click Me",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onPressed: () => playSound(5),
-                ),
-              ),
-              Expanded(
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.purple),
-                  ),
-                  child:
-                      Text("Click Me", style: TextStyle(color: Colors.white)),
-                  onPressed: () => playSound(6),
-                ),
-              ),
-              Expanded(
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.pink),
-                  ),
-                  child: Text(
-                    "Click Me",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onPressed: () => playSound(7),
-                ),
-              ),
+              buildKey(Colors.blue, 1),
+              buildKey(Colors.orange, 2),
+              buildKey(Colors.yellow, 3),
+              buildKey(Colors.green, 4),
+              buildKey(Colors.teal, 5),
+              buildKey(Colors.purple, 6),
+              buildKey(Colors.pink, 7),
             ],
           ),
         ),
