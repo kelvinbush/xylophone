@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 void main() => runApp(XylophoneApp());
 
 class XylophoneApp extends StatelessWidget {
+  void playSound(int id) => (AudioCache().play('note$id.wav'));
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,7 +22,7 @@ class XylophoneApp extends StatelessWidget {
                   "Click Me",
                   style: TextStyle(color: Colors.white),
                 ),
-                onPressed: () => AudioCache().play('note1.wav'),
+                onPressed: () => playSound(1),
               ),
               ElevatedButton(
                 style: ButtonStyle(
@@ -31,7 +33,7 @@ class XylophoneApp extends StatelessWidget {
                   "Click Me",
                   style: TextStyle(color: Colors.white),
                 ),
-                onPressed: () => AudioCache().play('note2.wav'),
+                onPressed: () => playSound(2),
               ),
               ElevatedButton(
                 style: ButtonStyle(
@@ -42,7 +44,7 @@ class XylophoneApp extends StatelessWidget {
                   "Click Me",
                   style: TextStyle(color: Colors.white),
                 ),
-                onPressed: () => AudioCache().play('note3.wav'),
+                onPressed: () => playSound(3),
               ),
               ElevatedButton(
                 style: ButtonStyle(
@@ -53,7 +55,7 @@ class XylophoneApp extends StatelessWidget {
                   "Click Me",
                   style: TextStyle(color: Colors.white),
                 ),
-                onPressed: () => AudioCache().play('note4.wav'),
+                onPressed: () => playSound(4),
               ),
               ElevatedButton(
                 style: ButtonStyle(
@@ -64,7 +66,7 @@ class XylophoneApp extends StatelessWidget {
                   "Click Me",
                   style: TextStyle(color: Colors.white),
                 ),
-                onPressed: () => AudioCache().play('note5.wav'),
+                onPressed: () => playSound(5),
               ),
               ElevatedButton(
                 style: ButtonStyle(
@@ -72,7 +74,7 @@ class XylophoneApp extends StatelessWidget {
                       MaterialStateProperty.all<Color>(Colors.purple),
                 ),
                 child: Text("Click Me", style: TextStyle(color: Colors.white)),
-                onPressed: () => AudioCache().play('note6.wav'),
+                onPressed: () => playSound(6),
               ),
               ElevatedButton(
                 style: ButtonStyle(
@@ -83,7 +85,7 @@ class XylophoneApp extends StatelessWidget {
                   "Click Me",
                   style: TextStyle(color: Colors.white),
                 ),
-                onPressed: () => AudioCache().play('note7.wav'),
+                onPressed: () => playSound(7),
               ),
             ],
           ),
